@@ -60,12 +60,18 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 3. Generate Dataset (if not already present)
+### 3. Environment Configuration (Optional)
+Copy `.env.example` to `.env` to set up environment credentials:
+```bash
+cp .env.example .env
+```
+
+### 4. Generate Dataset (if not already present)
 ```bash
 python generate_dataset.py
 ```
 
-### 4. Running the Application
+### 5. Running the Application
 
 You can start both services automatically on Windows using:
 ```cmd

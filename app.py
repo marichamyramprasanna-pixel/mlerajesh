@@ -38,8 +38,130 @@ st.markdown(
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #03152f 0%, #052b52 100%);
         border-right: 1px solid rgba(96, 196, 255, .25);
+        color: #eaf6ff;
     }
-    [data-testid="stSidebar"] * { color: #eaf6ff !important; }
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3,
+    [data-testid="stSidebar"] p {
+        color: #eaf6ff;
+    }
+
+    /* Sidebar Label Styling */
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] [data-testid="stWidgetLabel"] p {
+        color: #9bdfff !important;
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Selectbox Input Box in Sidebar */
+    [data-testid="stSidebar"] div[data-baseweb="select"] {
+        border-radius: 12px !important;
+    }
+
+    [data-testid="stSidebar"] div[data-baseweb="select"] > div {
+        background: linear-gradient(135deg, #072a4d 0%, #051e39 100%) !important;
+        border: 1px solid rgba(110, 218, 255, 0.5) !important;
+        border-radius: 12px !important;
+        color: #ffffff !important;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+        min-height: 44px !important;
+    }
+
+    [data-testid="stSidebar"] div[data-baseweb="select"] > div:hover {
+        border-color: #00d2ff !important;
+        box-shadow: 0 0 10px rgba(0, 210, 255, 0.25) !important;
+    }
+
+    /* Selected Value Text in Selectbox */
+    [data-testid="stSidebar"] div[data-baseweb="select"] span,
+    [data-testid="stSidebar"] div[data-baseweb="select"] div {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Selectbox Dropdown Arrow Icon */
+    [data-testid="stSidebar"] div[data-baseweb="select"] svg {
+        fill: #00d2ff !important;
+        color: #00d2ff !important;
+    }
+
+    /* Dropdown Popover Container (Global) */
+    div[data-baseweb="popover"],
+    div[data-baseweb="popover"] > div {
+        background-color: #062b53 !important;
+        border: 1px solid rgba(110, 218, 255, 0.5) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    /* Dropdown Options List */
+    div[data-baseweb="popover"] ul,
+    ul[role="listbox"] {
+        background-color: #062b53 !important;
+        padding: 6px !important;
+    }
+
+    /* Individual Option in Dropdown */
+    div[data-baseweb="popover"] li[role="option"],
+    ul[role="listbox"] li[role="option"] {
+        background-color: transparent !important;
+        color: #eaf6ff !important;
+        font-size: 0.95rem !important;
+        font-weight: 550 !important;
+        border-radius: 8px !important;
+        padding: 10px 14px !important;
+        margin: 2px 0 !important;
+        transition: all 0.15s ease !important;
+    }
+
+    /* Hovered and Selected Options */
+    div[data-baseweb="popover"] li[role="option"]:hover,
+    ul[role="listbox"] li[role="option"]:hover,
+    div[data-baseweb="popover"] li[aria-selected="true"],
+    ul[role="listbox"] li[aria-selected="true"] {
+        background: linear-gradient(90deg, #0a4f85 0%, #083c66 100%) !important;
+        color: #00f0ff !important;
+        font-weight: 700 !important;
+    }
+
+    div[data-baseweb="popover"] li[role="option"] span,
+    ul[role="listbox"] li[role="option"] span {
+        color: inherit !important;
+    }
+
+    /* Sidebar Buttons */
+    [data-testid="stSidebar"] .stButton > button {
+        background: linear-gradient(135deg, #0a4d80 0%, #063158 100%) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(110, 218, 255, 0.4) !important;
+        border-radius: 10px !important;
+        padding: 9px 16px !important;
+        font-weight: 700 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+        transition: all 0.2s ease !important;
+    }
+
+    [data-testid="stSidebar"] .stButton > button:hover {
+        background: linear-gradient(135deg, #0e63a3 0%, #094377 100%) !important;
+        border-color: #00d2ff !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 18px rgba(0, 210, 255, 0.35) !important;
+        transform: translateY(-1px);
+    }
+
+    [data-testid="stSidebar"] .stButton > button * {
+        color: #ffffff !important;
+    }
+
+    /* Sidebar Divider */
+    [data-testid="stSidebar"] hr {
+        border-color: rgba(96, 196, 255, 0.2) !important;
+        margin: 1.2rem 0 !important;
+    }
 
     .block-container { padding-top: 2rem; max-width: 1450px; }
 
@@ -111,6 +233,8 @@ st.markdown(
     }
 
     .stButton > button {
+        background: linear-gradient(135deg, #0a4d80 0%, #063158 100%) !important;
+        color: #ffffff !important;
         border-radius: 10px;
         font-weight: 750;
         border: 1px solid rgba(120, 220, 255, .30);

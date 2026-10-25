@@ -18,9 +18,9 @@ if exist "%~dp0.venv\Scripts\python.exe" (
   set "PYTHON_EXE=python"
 )
 
-start "Machine Fault Diagnosis Backend" /min cmd /c ""%PYTHON_EXE%" -m uvicorn backend:app --host 127.0.0.1 --port %BACKEND_PORT%"
+start "Machine Fault Diagnosis Backend" /min "%PYTHON_EXE%" -m uvicorn backend:app --host 0.0.0.0 --port %BACKEND_PORT%
 
-start "Machine Fault Diagnosis Server" /min cmd /c ""%PYTHON_EXE%" -m streamlit run app.py --server.headless true --server.port %PORT% --browser.gatherUsageStats false"
+start "Machine Fault Diagnosis Server" /min "%PYTHON_EXE%" -m streamlit run app.py --server.headless true --server.port %PORT% --server.address 0.0.0.0 --browser.gatherUsageStats false
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$ok=$false; for($i=0;$i -lt 60;$i++){try{$c=New-Object Net.Sockets.TcpClient('127.0.0.1',%PORT%);$c.Close();$ok=$true;break}catch{};Start-Sleep -Milliseconds 500}; if(-not $ok){exit 1}"
 if errorlevel 1 (
